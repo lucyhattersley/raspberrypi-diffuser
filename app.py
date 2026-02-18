@@ -6,7 +6,7 @@ import torch
 # pipe = StableDiffusionPipeline.from_pretrained("/home/lucy/Models/mitsua-diffusion-one", torch_dtype=torch.float32, low_cpu_mem_usage=True)
 
 # Stable diffusion v1.5
-pipe = StableDiffusionPipeline.from_pretrained("/home/lucy/Models/stable-diffusuion-v1-5", low_cpu_mem_usage=True)
+pipe = StableDiffusionPipeline.from_pretrained("/home/lucy/Models/stable-diffusion-v1-5", low_cpu_mem_usage=True)
 pipe = pipe.to("cpu")
 
 prompt = "a photograph of an astronaut riding a horse"
