@@ -16,8 +16,8 @@ pipe = StableDiffusionPipeline.from_pretrained(model, low_cpu_mem_usage=True)
 pipe = pipe.to("cpu")
 
 prompt = "a photograph of an astronaut riding a horse on mars"
-image = pipe(prompt, num_inference_steps=35, width=512, height=512).images[0]
+image = pipe(prompt, num_inference_steps=3, width=512, height=512).images[0]
 
-elapsed_time = time.time() - start
-filename = f"astro-horse-mars_{model}_{elapsed_time:.2f}s.png"
+elapsed_time = time.time() - start_time
+filename = f"astro-horse-mars_{model_name}_{elapsed_time:.2f}s.png"
 image.save(filename)
