@@ -17,7 +17,7 @@ pipe = StableDiffusionPipeline.from_pretrained(model, torch_dtype=torch.float32,
 pipe = pipe.to("cpu")
 
 prompt = "a photograph of an astronaut riding a horse on mars"
-image = pipe(prompt, num_inference_steps=3, width=512, height=512).images[0]
+image = pipe(prompt, num_inference_steps=35, width=512, height=512).images[0]
 
 elapsed_time = time.time() - start_time
 mins, secs = int(elapsed_time // 60), elapsed_time % 60
