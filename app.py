@@ -19,5 +19,7 @@ prompt = "a photograph of an astronaut riding a horse on mars"
 image = pipe(prompt, num_inference_steps=3, width=512, height=512).images[0]
 
 elapsed_time = time.time() - start_time
-filename = f"astro-horse-mars_{model_name}_{elapsed_time:.2f}s.png"
+mins, secs = int(elapsed_time // 60), elapsed_time % 60
+elapsed_str = f"{mins} min {secs:.2f} sec"
+filename = f"astro-horse-mars_{model_name}_{elapsed_str.replace(' ', '_')}.png"
 image.save(filename)
