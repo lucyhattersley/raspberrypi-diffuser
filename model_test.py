@@ -4,7 +4,7 @@ import torch
 import time
  
 start_time = time.time() # so we can time runtime
-models_dir = "/home/lucy/Models/" # store our models here
+models_dir = "/home/rpom/Models/"  # store our models here
 
 # Name of model
 # model_name = "mitsua-diffusion-one"  # Pick a  model from the Models folder
