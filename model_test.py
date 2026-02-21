@@ -16,11 +16,11 @@ model = models_dir + model_name
 pipe = StableDiffusionPipeline.from_pretrained(model, low_cpu_mem_usage=True) # Add torch_dtype=torch.float32 for Mit   
 pipe = pipe.to("cpu")
 
-prompt = "a photograph of an astronaut riding a horse on mars"
+prompt = "a cute magical flying space dog with a cape, fantasy space  art drawn by concept artists, golden colour, high quality, highly detailed, elegant, sharp focus, concept art, character concepts, digital painting, mystery, adventure"
 image = pipe(prompt, num_inference_steps=35, width=512, height=512).images[0]
 
 elapsed_time = time.time() - start_time
 mins, secs = int(elapsed_time // 60), elapsed_time % 60
 elapsed_str = f"{mins} min {secs:.2f} sec"
-filename = f"astro-horse-mars_{model_name}_{elapsed_str.replace(' ', '_')}.png"
+filename = f"space-dog{model_name}_{elapsed_str.replace(' ', '_')}.png"
 image.save(filename)
