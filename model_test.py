@@ -1,22 +1,20 @@
+import os
 from diffusers import StableDiffusionPipeline
 from PIL import Image
 import torch
 import time
  
 start_time = time.time() # so we can time runtime
-models_dir = "/home/rpom/Models/"  # store our models here
-
-# Name of model
-# model_name = "mitsua-diffusion-one"  # Pick a  model from the Models folder
+models_dir = os.path.expanduser("~/Models/")
 
 # Stable diffusion v1.5
 model_name = "stable-diffusion-v1-5" # Pick a  model from the Models folder
 
 model = models_dir + model_name
-pipe = StableDiffusionPipeline.from_pretrained(model, low_cpu_mem_usage=True) # Add torch_dtype=torch.float32 for Mit   
+pipe = StableDiffusionPipeline.from_pretrained(model, low_cpu_mem_usage=True) # Add torch_dtype=torch.float32 for Mitsua Diffusion One
 pipe = pipe.to("cpu")
 
-prompt = "a cute magical flying space dog with a cape, fantasy space  art drawn by concept artists, golden colour, high quality, highly detailed, elegant, sharp focus, concept art, character concepts, digital painting, mystery, adventure"
+prompt = "a cute flying space dog with a glass helmet and a cape, fantasy space  art drawn by concept artists, golden colour, high quality, highly detailed, elegant, sharp focus, concept art, character concepts, digital painting, mystery, adventure"
 image = pipe(prompt, num_inference_steps=35, width=512, height=512).images[0]
 
 elapsed_time = time.time() - start_time
