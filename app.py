@@ -1,7 +1,7 @@
 from diffusers import StableDiffusionPipeline
 from PIL import Image
 
-pipe = StableDiffusionPipeline.from_pretrained("../stable-diffusion-v1-5", low_cpu_mem_usage=True)
+pipe = StableDiffusionPipeline.from_pretrained("~/Models/stable-diffusion-v1-5", low_cpu_mem_usage=True)
 pipe = pipe.to("cpu")
 
 prompt = "an astronaut riding a horse on mars"
