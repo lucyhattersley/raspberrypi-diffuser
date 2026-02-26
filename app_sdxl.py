@@ -3,7 +3,7 @@ from diffusers import StableDiffusionXLPipeline
 from PIL import Image
 
 # The expanded path to the model
-model = os.path.expanduser("~/Models/stable-diffusion-xl")
+model = os.path.expanduser("~/Models/stable-diffusion-xl-base-1.0")
 
 pipe = StableDiffusionXLPipeline.from_pretrained(model, low_cpu_mem_usage=True) # Load the model
 pipe = pipe.to("cpu") # Move the model to the CPU
