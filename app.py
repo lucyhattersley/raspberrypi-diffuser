@@ -8,7 +8,7 @@ model = os.path.expanduser("~/Models/stable-diffusion-v1-5")
 pipe = StableDiffusionPipeline.from_pretrained(model, low_cpu_mem_usage=True) # Load the model
 pipe = pipe.to("cpu") # Move the model to the CPU
 
-prompt = "an astronaut riding a horse" # Set the prompt
-image = pipe(prompt, num_inference_steps=5, width=521, height=512).images[0]
+prompt = "an astronaut riding a horse on mars" # Set the prompt
+image = pipe(prompt, num_inference_steps=5, width=512, height=512).images[0]
 
 image.save("astro-horse.png") 
